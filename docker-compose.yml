@@ -1,0 +1,11 @@
+version: '3'
+services:
+  proxy:
+    image: dealercom/nginx-auth-proxy:1.13-0.2
+    environment:
+      - BACKEND_URL=http://example.com
+      - AUTH_SERVER_URL=http://10.128.204.134:8080
+      - PROXY_URL_BASE=http://localhost
+
+    ports:
+      - "80:80"
